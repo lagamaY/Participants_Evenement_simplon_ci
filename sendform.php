@@ -38,16 +38,7 @@
 		
 		mysqli_query($conn, $sql);
 
-		/*if(mysqli_query($conn, $sql)){
-			
-			//POUR RECUPERER AFFICHER LES DONNNEES DE LA TABLE
-			cho nl2br("\n$first_name\n $last_name\n "
-				. "$gender\n $email");
-		} else{
-			echo "ERROR: Hush! Sorry $sql. "
-				. mysqli_error($conn);
-		}
-		*/
+		
 		// Close connection
 		mysqli_close($conn);
 

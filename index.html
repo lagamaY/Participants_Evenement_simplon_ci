@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Simplon CI Register</title>
+    <!--link to css file-->
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    
+    <!--affaire de mise en forme de la page-->
+
+    <h2>Bienvenue à Simplon Côte d'Ivoire.
+        <h2><!--Weekly Coding Challenge #1: Sign in/uprm--></h2>
+        <div class="container" id="container">
+            <div class="form-container sign-up-container">
+               <form action="#">
+                    <h1>Create Account</h1>
+                    <div class="social-container">
+                        <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                        <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <span>or use your email for registration</span>
+                    <input type="text" placeholder="Name" />
+                    <input type="email" placeholder="Email" />
+                    <input type="password" placeholder="Password" />
+                    <button>Sign Up</button>
+                </form>
+            </div>
+            <div class="form-container sign-in-container">
+
+                <!--FORM A MODIFIER-->
+                <form action="#">
+                    <h1>Enregistrez vous !</h1>
+                   <div class="social-container"> </div>
+                   
+                    <input type="text" id="nom" name="nom" placeholder="Nom" required>
+                    <input type="text" id="prenom" name="prenom" placeholder="Prénom" required>
+                    <input type="text" id="numero" name="numero" placeholder="Numéro" required>
+                    <input type="email" id="mail" name="mail" placeholder="Email" required>
+
+                    <a href="#"><!--Forgot your password?--></a>
+
+                    <!--bouton 'envoi'-->
+                    <input type="submit" id="submitBtn" name="envoyer" value="Envoyer" required>
+                </form>
+
+                <p id="send"></p>
+
+            </div>
+            <div class="overlay-container">
+                <div class="overlay">
+                    
+                    <div class="overlay-panel overlay-right">
+                        <h1>Liste des participants.</h1>
+                        <p>Si vous vous êtes déjà inscrit(e) sur la liste des participants, vous pouvez vérifier votre nom sur la liste de présence <a target="_blank" href="affichage.php">ici</a>.</p>
+                         
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+       
+    <!--fin de la mise en forme de la page-->
+
+
+
+
+
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script type="text/javascript">
+    document.querySelector("#submitBtn").addEventListener("click",function(){
+        var UserData = "nom="+$("input[name=nom]").val() + "&prenom="+$("input[name=prenom]").val()+ "&numero="+$("input[name=numero]").val()+ "&mail="+$("input[name=mail]").val();
+        $.ajax({
+            type: "post",
+            data:UserData,
+            url:"sendform.php",
+            success:function(response){
+                console.log("Data Submitted");
+                console.log(response);
+                $("#send").html(" Enregistrement effectué avec succès !")
+            },
+            error:function(e){
+                $("#send").html("Some error occured");
+            }
+        })
+    })
+</script>
+
+    
+</body>
+ 
+</html>
