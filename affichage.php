@@ -20,9 +20,14 @@ $servername ="localhost";
 $username = "root";
 $password = "";
 $dbname = "evenementsimplon";
+/*
+$servername ="localhost";
+$username = "id20186404_carnetsimplon";
+$password = "Password@MAMAM11";
+$dbname = "id20186404_carnet";
+*/
 
-
-$recup = mysqli_connect("localhost", "root", "", "evenementsimplon");
+$recup = mysqli_connect($servername, $username, $password, $dbname);
 
 // Check connection
 if($recup === false){
@@ -107,7 +112,7 @@ mysqli_close($recup);
 <!-- follow me template -->
 <div class="made-with-love">
   Votre nom n'est pas sur la liste?
-  <a  href="index.html">Veuillez-vous enregistrer ici !</a>
+  <a  href="index.php">Veuillez-vous enregistrer ici !</a>
 </div>
 
 <script>

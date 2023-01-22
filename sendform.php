@@ -15,8 +15,14 @@
 		 $password = "";
 		 $dbname = "evenementsimplon";
          
+		 /*
+$servername ="localhost";
+$username = "id20186404_carnetsimplon";
+$password = "Password@MAMAM11";
+$dbname = "id20186404_carnet";
+*/
 
-         $conn = mysqli_connect("localhost", "root", "", "evenementsimplon");
+$conn = mysqli_connect($servername, $username, $password, $dbname);
 		
 		// Check connection
 		if($conn === false){
