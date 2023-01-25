@@ -22,6 +22,7 @@ $password = "Password@MAMAM11";
 $dbname = "id20186404_carnet";
 */
 
+
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 		
 		// Check connection
@@ -31,14 +32,16 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 		}
 		
 		// Taking all 5 values from the form data(input)
+		$id = $_REQUEST["id"];
 		$nom = $_REQUEST['nom'];
 		$prenom = $_REQUEST['prenom'];
 		$numero = $_REQUEST['numero'];
 		$mail = $_REQUEST['mail'];
 		
+		
 		// Performing insert query execution
 		// here our table name is college
-		$sql = "INSERT INTO participants VALUES (
+		$sql = "INSERT INTO participants(id, nom, prenom, numero, mail) VALUES ('$id',
 		'$nom',
 			'$prenom','$numero','$mail')";
 		
@@ -52,8 +55,7 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 		?>
 		
 
-
-
+		 
 
 
 

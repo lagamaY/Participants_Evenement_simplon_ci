@@ -27,7 +27,7 @@
                 <form action="#">
                     <h1>Enregistrez vous !</h1>
                    <div class="social-container"> </div>
-                   
+                    <input type="hidden" id="id" name="id" value="">
                     <input type="text" id="nom" name="nom" placeholder="Nom" required>
                     <input type="text" id="prenom" name="prenom" placeholder="Prénom" required>
                     <input type="number" id="numero" name="numero" placeholder="Numéro" required>

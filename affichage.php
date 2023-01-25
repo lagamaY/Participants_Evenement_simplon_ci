@@ -87,10 +87,7 @@ else{
 		</tbody>
 		</table>
 	</div>
-
-       
-           
-       
+   
 
    </table>
 
